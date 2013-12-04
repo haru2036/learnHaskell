@@ -1,5 +1,5 @@
-countUnigram :: String -> [String] -> Int
+searchAndCountWords :: String -> [String] -> Int
 
-countUnigram key items = length $ takeWhile (==key) items
+searchAndCountWords key items = length $ filter (==key) items
 
-main = return $ countUnigram "a" ["a", "a", "ba", "bb", "ab", "a"]
+main = return $ searchAndCountWords "a" ["a", "a", "ba", "bb", "ab", "a"]
