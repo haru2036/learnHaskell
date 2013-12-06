@@ -1,8 +1,10 @@
-searchAndCountWords :: String -> [String] -> Int
-uniqueElements :: [String] -> [String]
+import Data.List
 
-uniqueElements list = nub list
+searchAndCountWords :: String -> [String] -> Int
+getUnigramFrequency :: [String] -> [Int]
+
+getUnigramFrequency sList= [searchAndCountWords a sList| a <- nub sList]
 
 searchAndCountWords key items = length $ filter (==key) items
 
-main = return $ searchAndCountWords "a" ["a", "a", "ba", "bb", "ab", "a"]
+main = return $ getUnigramFrequency ["a", "a", "ba", "bb", "ab", "a"]
