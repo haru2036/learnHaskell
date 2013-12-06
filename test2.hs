@@ -1,4 +1,7 @@
 searchAndCountWords :: String -> [String] -> Int
+uniqueElements :: [String] -> [String]
+
+uniqueElements list = nub list
 
 searchAndCountWords key items = length $ filter (==key) items
 
